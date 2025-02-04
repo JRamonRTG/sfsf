@@ -1,0 +1,160 @@
+/* reset css */
+
+* {
+  min-width: 0;
+  font: inherit;
+}
+
+
+*,
+*::after,
+*::before {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+
+img,
+video,
+svg {
+  display: block;
+  height: auto;
+  max-width: 100%;
+}
+
+body {
+  margin: 0;
+  min-height: 100dvh;
+}
+
+h1,
+h2,
+h3 {
+  text-wrap: balance;
+}
+
+p {
+  text-wrap: pretty;
+}
+
+/* starts here */
+.background-animation {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  top: 0;
+  left: 0;
+  z-index: -1; /* Detrás de la carta */
+  display: none; /* Oculta por defecto */
+}
+
+#letterCard.active .background-animation {
+  display: block; /* Muestra la animación cuando la carta se activa */
+}
+
+
+
+body {
+  background-color: #fad7df;
+  height: 100vh;
+
+  & main {
+
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+
+    & h1 {
+      font-size: 2.5rem;
+      text-align: center;
+      font-weight: 700;
+    }
+
+    & .options {
+      font-size: 1.5rem;
+      font-weight: 600;
+
+
+      & button {
+        padding: .5rem 1.5rem;
+        border: 2px solid rgba(0, 0, 0, .9);
+        border-radius: 5px;
+        cursor: pointer;
+        box-shadow: 1px 1px 1px rgba(0, 0, 0, .2);
+      }
+
+      & button:hover {
+        box-shadow: 2px 2px 2px rgba(0, 0, 0, .4);
+      }
+
+      & button#yes {
+        background-color: #97cfaa;
+        margin-right: 2rem;
+      }
+
+      & button#no {
+        background-color: #f36c46;
+      }
+    }
+  }
+}
+
+#message {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: palegoldenrod;
+  /* display: flex; */
+  display: none;
+  justify-content: center;
+  align-items: center;
+
+  & h1 {
+    font-size: 3rem;
+    text-align: center;
+    font-weight: 600;
+    animation: palpitation 2s ease-in-out infinite;
+    line-height: 4rem;
+  }
+}
+
+@keyframes palpitation {
+  0% {
+    transform: scale(1);
+  }
+
+  50% {
+    transform: scale(1.1);
+  }
+
+  100% {
+    transform: scale(1);
+  }
+}
+
+/* Animación de flores */
+.flowers-background {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: -1; /* Detrás de todo */
+  pointer-events: none; /* Para que no interfiera con los clics */
+}
+
+.flowers-background .flowers {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  transform: scale(0.9);
+}
+
+/* Resto del CSS de la animación de flores (copiar y pegar el CSS de la animación de flores aquí) */
